@@ -1,4 +1,3 @@
-import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
 import { addContact } from "components/redux/actions";
 
