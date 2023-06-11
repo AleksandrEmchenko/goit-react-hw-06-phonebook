@@ -1,6 +1,6 @@
 const initialState = {
   contacts: [],
-  filter: "",
+  filters: "",
 };
 
 export const rootReducer = (state = initialState, action) => {

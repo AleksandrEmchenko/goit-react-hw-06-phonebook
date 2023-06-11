@@ -5,17 +5,15 @@ import { useSelector } from "react-redux";
 import { getContacts, getFilter } from "components/redux/selector";
 import ContactItem from "components/ContactItem/ContactItem";
 
-console.log(getFilter)
+
 function ContactsList() {
   
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   
 
-  const getVisiblesContacts = contacts.filter((contact) =>
-  contact.name.includes(filter))
+  const getVisiblesContacts = contacts.filter((contact) => contact.name.includes(filter));
 
-console.log(getVisiblesContacts)
   return (
     <div>
       {contacts.length !== 0 ? (

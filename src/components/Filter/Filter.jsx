@@ -1,12 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
 import { myFilter } from "../redux/actions";
-
+// import { getFilter } from "components/redux/selector";
 import { FilterFild } from "./Filter.styled";
 
 function Filter() {
   const dispatch = useDispatch();
 
-  const filter = useSelector((state) => state.filter);
+  const filter = useSelector((state) => state.filters);
+  // const filter = useSelector(getFilter);
 
 
   const onChange = (event) => dispatch(myFilter(event.target.value));
@@ -21,7 +22,9 @@ function Filter() {
         value={filter.value}
         onChange={onChange}
       />
+      {/* <button onClick={onChange}>filter</button> */}
     </label>
+    
   );
 }
 export default Filter;
