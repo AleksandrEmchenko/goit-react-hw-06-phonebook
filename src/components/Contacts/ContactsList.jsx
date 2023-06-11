@@ -17,7 +17,8 @@ function ContactsList() {
       contact.name.includes(filter)
     );
   };
-
+console.log(contacts)
+console.log(filter.value)
   return (
     <div>
       {contacts.length !== 0 ? (
@@ -34,4 +35,3 @@ function ContactsList() {
 }
 
 export default ContactsList;
-

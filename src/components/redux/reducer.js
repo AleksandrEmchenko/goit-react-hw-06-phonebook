@@ -1,6 +1,6 @@
 const initialState = {
   contacts: [],
-  filter: [],
+  filter: "",
 };
 
 export const rootReducer = (state = initialState, action) => {
@@ -18,7 +18,7 @@ export const rootReducer = (state = initialState, action) => {
           (contact) => contact.id !== action.payload
         ),
       };
-    case "filters/setFilter":
+    case "filters/myFilter":
       return {
         ...state,
         filters: {

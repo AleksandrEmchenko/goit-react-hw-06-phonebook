@@ -5,9 +5,11 @@ import { FilterFild } from "./Filter.styled";
 
 function Filter() {
   const dispatch = useDispatch();
-  const filter = useSelector((state) => state.myFilter);
 
-  const onChange = (filter) => dispatch(myFilter(filter));
+  const filter = useSelector((state) => state.filter);
+
+
+  const onChange = (event) => dispatch(myFilter(event.target.value));
 
   return (
     <label>
@@ -16,7 +18,7 @@ function Filter() {
       <FilterFild
         type="text"
         name="filter"
-        value={filter}
+        value={filter.value}
         onChange={onChange}
       />
     </label>
