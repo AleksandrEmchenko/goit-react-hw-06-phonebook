@@ -1,3 +1,4 @@
+
 import ContactForm from "./ContactForm";
 import ContactsList from "./Contacts";
 import Filter from "./Filter";
@@ -11,9 +12,9 @@ function App() {
 
       <h2>Contacts</h2>
 
-      <Filter />
+      {/* <Filter /> */}
 
-      <ContactsList />
+      {/* <ContactsList /> */}
     </div>
   );
 }

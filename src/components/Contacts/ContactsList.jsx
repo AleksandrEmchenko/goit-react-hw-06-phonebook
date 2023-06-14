@@ -1,10 +1,12 @@
-import { List } from "../Contacts/Contacts.styled";
-
 import { useSelector } from "react-redux";
-
 import { getContacts, getFilter } from "components/redux/selector";
 import ContactItem from "components/ContactItem/ContactItem";
+import { List } from "../Contacts/Contacts.styled";
 
+// const getVisiblesContacts = contacts.filter((contact) => contact.name.includes(filter));
+// const getVisiblesContacts = (contacts, setStatusFilter) => {
+//   contacts.filter((contact) => contact.name.includes(filter));
+// };
 
 function ContactsList() {
   
@@ -12,13 +14,13 @@ function ContactsList() {
   const filter = useSelector(getFilter);
   
 
-  const getVisiblesContacts = contacts.filter((contact) => contact.name.includes(filter));
+
 
   return (
     <div>
       {contacts.length !== 0 ? (
         <List>
-          {getVisiblesContacts.map((contact) => {
+          {contacts.map((contact) => {
             return <ContactItem key={contact.id} contact={contact} />;
           })}
         </List>

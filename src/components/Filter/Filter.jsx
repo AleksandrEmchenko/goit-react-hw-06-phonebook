@@ -10,7 +10,7 @@ function Filter() {
   // const filter = useSelector(getFilter);
 
 
-  const onChange = (event) => dispatch(myFilter(event.target.value));
+  // const onChange = (event) => dispatch(myFilter(event.target.value));
 
   return (
     <label>
@@ -20,7 +20,7 @@ function Filter() {
         type="text"
         name="filter"
         value={filter.value}
-        onChange={onChange}
+        // onChange={onChange}
       />
       {/* <button onClick={onChange}>filter</button> */}
     </label>
