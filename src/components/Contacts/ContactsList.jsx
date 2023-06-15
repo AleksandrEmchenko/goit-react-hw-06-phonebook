@@ -9,18 +9,32 @@ import { List } from "../Contacts/Contacts.styled";
 // };
 
 function ContactsList() {
-  
+  // const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   
 
+  const filteredContacts = (contacts, filter) => {
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter)
+    );
+  };
+
+
+  const visibleContacts = filteredContacts(contacts, filter);
+
+
+
+// const visibleContacts = (contacts, setStatusFilter) => {
+//   return contacts.filter(contact => !contact.name.includes(filter));
+// }
 
 
   return (
     <div>
       {contacts.length !== 0 ? (
         <List>
-          {contacts.map((contact) => {
+          {visibleContacts.map((contact) => {
             return <ContactItem key={contact.id} contact={contact} />;
           })}
         </List>

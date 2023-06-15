@@ -14,9 +14,16 @@ import {
   REGISTER,
 } from "redux-persist";
 
+const persistConfig = {
+  key: "myLocalContacts",
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
 export const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -24,10 +31,7 @@ export const store = configureStore({
     }),
 });
 
-const persistConfig = {
-  key: "myLocalContacts",
-  storage,
-};
 
-const persistedReducer = persistReducer(persistConfig, reducer);
+
+
 export const persistor = persistStore(store);

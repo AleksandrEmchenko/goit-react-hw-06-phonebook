@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import { addContact } from "components/redux/actions";
+import { addContact } from "components/redux/contactSlice";
+
 
 import {
   Container,
@@ -10,6 +11,7 @@ import {
 
 function ContactForm() {
   const dispatch = useDispatch();
+
 
   const handleSubmitForm = (event) => {
     event.preventDefault();
