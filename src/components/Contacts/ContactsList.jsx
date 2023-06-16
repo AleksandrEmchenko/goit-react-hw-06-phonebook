@@ -3,6 +3,7 @@ import { getContacts, getFilter } from "components/redux/selector";
 import ContactItem from "components/ContactItem/ContactItem";
 import { List } from "../Contacts/Contacts.styled";
 
+
 // const getVisiblesContacts = contacts.filter((contact) => contact.name.includes(filter));
 // const getVisiblesContacts = (contacts, setStatusFilter) => {
 //   contacts.filter((contact) => contact.name.includes(filter));
@@ -16,7 +17,7 @@ function ContactsList() {
 
   const filteredContacts = (contacts, filter) => {
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter)
+      contact.name.toLowerCase().includes(filter.toLowerCase())
     );
   };
 

@@ -11,7 +11,7 @@ function Filter() {
   const filter = useSelector(getFilter);
 
 
-  const onChange = (event) => dispatch(setFilter(event.target.value));
+  const onChange = (event) => dispatch(setFilter(event.currentTarget.value));
 
   return (
     <label>
@@ -20,7 +20,7 @@ function Filter() {
       <FilterFild
         type="text"
         name="filter"
-        value={filter.value}
+        value={filter}
         onChange={onChange}
       />
  
