@@ -18,7 +18,7 @@ function Filter() {
       <FilterFild
         type="text"
         name="filter"
-        value={filter}
+        value={filter.value}
         onChange={onChange}
       />
     </label>
