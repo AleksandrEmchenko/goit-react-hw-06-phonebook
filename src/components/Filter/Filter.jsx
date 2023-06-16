@@ -1,15 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
 import { getFilter } from "components/redux/selector";
 
-
 import { FilterFild } from "./Filter.styled";
 import { setFilter } from "components/redux/contactSlice";
 
 function Filter() {
   const dispatch = useDispatch();
-// const contacts = useSelector(getContacts);
+  // const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-
 
   const onChange = (event) => dispatch(setFilter(event.currentTarget.value));
 
@@ -23,9 +21,7 @@ function Filter() {
         value={filter}
         onChange={onChange}
       />
- 
     </label>
-    
   );
 }
 export default Filter;
